@@ -1,0 +1,66 @@
+
+.openning-container-main-body-info-light{
+    background-color: #007a99
+
+}
+
+.openning-container-main-body-info-dark{
+    background-color:#000033
+}
+
+.openning{
+    top:15rem;
+    display: block;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    font-size:4rem;
+    text-shadow: 2px 2px 4px #000000;
+
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 50px;
+    width:15rem;
+    align-items: center;
+    color:white;
+}
+
+/* //notice that if height is not 0 px there is a gap in the front  */
+.check{
+    justify-content: space-between;
+    align-items: center;
+    height:0px;
+}
+
+@media only screen and (max-width: 812px) {
+    .openning{
+        font-size: 3rem;
+    }
+    .check{
+        flex-direction: column;
+        width:initial;
+    }
+    .icons{
+        margin:auto;
+
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .openning{
+        font-size: 2rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 280px) {
+    .openning{
+        font-size: 1.5rem;
+    }
+}
+

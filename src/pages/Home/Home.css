@@ -1,0 +1,31 @@
+
+.openning-container-main-body-info-light{
+    background-color: #007a99
+
+}
+
+.openning-container-main-body-info-dark{
+    background-color:#000033
+}
+
+.circles{
+    position: relative;
+    height:100%;
+    
+}
+
+
+/* //notice that if height is not 0 px there is a gap in the front  */
+.check{
+    justify-content: space-between;
+    align-items: center;
+    height:0px;
+}
+
+@media only screen and (max-width: 812px) {
+    img{
+        width:100%;
+    }
+}
+
+
