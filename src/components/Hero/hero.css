@@ -9,7 +9,6 @@
 }
 
 .openning{
-    top:15rem;
     display: block;
     font-weight: bold;
     color:white;
@@ -19,11 +18,22 @@
 
 }
 
+.sub-openning{
+    display: block;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    font-size:3rem;
+    text-shadow: 2px 2px 4px #000000;
+
+}
+
+
 .icons{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 50px;
+    font-size: 3rem;
     width:15rem;
     align-items: center;
     color:white;
@@ -42,6 +52,12 @@
     .openning{
         font-size: 3rem;
     }
+
+    .sub-openning{
+        font-size: 1.5rem;
+
+
+    }
     .check{
         flex-direction: column;
         width:initial;
@@ -56,6 +72,12 @@
     .openning{
         font-size: 2rem;
     }
+    .sub-openning{
+        font-size: 1rem;
+
+
+    }
+
 }
 
 
@@ -64,5 +86,11 @@
     .openning{
         font-size: 1.5rem;
     }
+    .sub-openning{
+        font-size: 0.75rem;
+
+
+    }
+
 }
 

@@ -16,9 +16,9 @@ const Home: React.FC<Props> = (props) => {
     return (
         <div>
             <OpenningContainer>
-                <div className="check">
+                {/* <div className="check"> */}
                     <Hero></Hero>
-                </div>
+                {/* </div> */}
                 <img className='circles' src={circles} alt="circleSvg"></img>
             </OpenningContainer>
             <About></About>
@@ -27,6 +27,7 @@ const Home: React.FC<Props> = (props) => {
 }
 
 const OpenningContainer = styled.div`
+
 width:100%;
 z-index:1;
 background: ${(props) => {

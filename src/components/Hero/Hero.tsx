@@ -8,10 +8,10 @@ import { Link } from 'react-scroll';
 import fileSaver from "file-saver"
 
 const GeneralInfoContainer = styled.div`
-position: relative;
+position: absolute;
 display:flex;
 flex-direction:row;
-top:7rem;
+top:11rem;
 left:1rem;
 font-size:1rem;
 width:95%;
@@ -23,38 +23,17 @@ align-items:center;
 flex-direction:column;
 
 }
-@media (max-width:600px){
-width:initial;
-left:initial;
-
-}
-
-@media (max-width:540px){
-width:initial;
-top:0rem;
-left:initial;
-
-}
 
 
 @media (max-width:500px){
-width:initial;
-top:1rem;
-left:initial;
+top:6rem;
 }
 
 
 
-@media (max-width:360px){
-width:initial;
-top:0rem;
-left:initial;
-}
 
 @media (max-width:280px){
-width:initial;
-top:0rem;
-left:initial;
+top:5rem;
 }
 `
 
@@ -63,7 +42,7 @@ display:flex;
 flex-direction:column;
 top:15rem;
 left:10rem;
-font-size:2rem;
+/* font-size:2rem; */
 
 @media (max-width:812px){
 width:initial;
@@ -112,14 +91,14 @@ display: block;
 color:white;
 background: ${props => props.theme.buttons};
 border:2px solid white;
-padding: 1rem 1rem;
+padding: 0.5rem;
 text-align: center;
 text-decoration: none;
 display: inline-block;
 width:10rem;
 font-size: 16px;
-margin-top:10px;
-margin-bottom:10px;
+margin-top:2rem;
+margin-bottom:2rem;
 margin-left:auto;
 margin-right:auto;
 border-radius:100px;    
@@ -135,8 +114,8 @@ color: white;
 @media (max-width:812px){
 margin-left:auto;
 margin-right:auto;
-margin-top:1rem;
-margin-bottom:1rem;
+margin-top:2rem;
+margin-bottom:2rem;
 }  
 `
 
@@ -155,7 +134,7 @@ const Hero = () => {
             <GeneralInfoContainer>
                 <GeneralInfoContainer2>
                     <div className='openning'>Milton Lerner</div>
-                    <div className='openning'>Fullstack web developer</div>
+                    <div className='sub-openning'>Fullstack web developer</div>
                     
                     {/* <AboutMeButton className='about-me-button' onClick={handleClick}> */}
                     <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>

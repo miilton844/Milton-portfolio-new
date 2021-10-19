@@ -20,6 +20,9 @@
     justify-content: space-between;
     align-items: center;
     height:0px;
+    
+
+
 }
 
 @media only screen and (max-width: 812px) {
