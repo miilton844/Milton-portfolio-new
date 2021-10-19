@@ -8,10 +8,10 @@ import { Link } from 'react-scroll';
 import fileSaver from "file-saver"
 
 const GeneralInfoContainer = styled.div`
-position: absolute;
+position: relative;
 display:flex;
 flex-direction:row;
-top:11rem;
+top:7rem;
 left:1rem;
 font-size:1rem;
 width:95%;
@@ -24,16 +24,25 @@ flex-direction:column;
 
 }
 
+@media (max-width:540px){
+/* width:initial; */
+top:4rem;
+/* left:initial; */
 
-@media (max-width:500px){
-top:6rem;
 }
 
 
 
 
+
+@media (max-width:360px){
+top:2rem;
+}
+
 @media (max-width:280px){
-top:5rem;
+width:initial;
+top:0rem;
+left:initial;
 }
 `
 
@@ -91,7 +100,7 @@ display: block;
 color:white;
 background: ${props => props.theme.buttons};
 border:2px solid white;
-padding: 0.5rem;
+padding: 0.5rem 0.5rem;
 text-align: center;
 text-decoration: none;
 display: inline-block;
@@ -125,7 +134,7 @@ const Hero = () => {
     const saveFile = () => {
         fileSaver.saveAs(
             process.env.PUBLIC_URL + "/CV.pdf",
-          "CV.pdf"
+            "CV.pdf"
         );
     }
 
@@ -135,17 +144,17 @@ const Hero = () => {
                 <GeneralInfoContainer2>
                     <div className='openning'>Milton Lerner</div>
                     <div className='sub-openning'>Fullstack web developer</div>
-                    
+
                     {/* <AboutMeButton className='about-me-button' onClick={handleClick}> */}
                     <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
-                About
-            </MenuLink>
-                        {/* </AboutMeButton> */}
+                        About
+                    </MenuLink>
+                    {/* </AboutMeButton> */}
                 </GeneralInfoContainer2>
                 <div className='icons'>
                     <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
-                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }}  />
-                    <FontAwesomeIcon icon={faLinkedin} onClick={(e)=>{window.open('https://www.linkedin.com/in/milton-lerner-b22176156/')}} />
+                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
+                    <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
                 </div>
             </GeneralInfoContainer>
 
