@@ -6,9 +6,12 @@ import { darkMode } from "../../redux/actions/darkMode"
 const InputWrapper = styled.label`
 position:relative;
 margin:10px;
+
 `
+//avoiding jump of toggle
 const Input = styled.input`
-position:absolute;
+/* position:absolute; */
+display:none;
 left:-9999px;
 top:-9999px;
 &:checked + span{

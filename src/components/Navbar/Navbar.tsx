@@ -26,7 +26,7 @@ const Navbar: React.FC<Props> = (props) => {
 
 
     return <Nav>
-        <Logo href="">
+        <Logo >
             Milton <span>Codes</span>
         </Logo>
         <Hamburger onClick={() => change(isOpen)}>

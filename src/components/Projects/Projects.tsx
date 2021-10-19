@@ -5,9 +5,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card } from "../Card/Card";
 import { projectsService } from "../../services/projects"
 import { useEffect, useState } from "react"
-import axios from "axios";
-import { GithubAuthProvider } from "@firebase/auth";
+import usePagination from "../Pagination/Pagination";
+import { Pagination } from "@material-ui/lab";
+import { makeStyles } from "@material-ui/core/styles";
 
+import "./Projects.css"
+
+
+
+
+const PaginationContainer = styled.div`
+background: ${props => props.theme.aboutBodyInfo};
+margin-top:-1px;
+align-items: center;
+    justify-content: center;
+    color:white
+
+    
+
+
+
+`
 const ProjectsContainer = styled.div`
 
 background: ${props => props.theme.aboutBodyInfo};
@@ -36,6 +54,25 @@ interface Props {
 
 const Projects: React.FC<Props> = (props) => {
   const [projectsInfo, setProjectsInfo] = useState([]);
+  const useStyles = makeStyles(() => ({
+    ul: {
+      "& .MuiPaginationItem-root": {
+        color: "black",
+        background:"white"
+      },
+    }
+
+    
+  }));
+  
+  const classes = useStyles();
+
+  let [page, setPage] = useState(1);
+  const PER_PAGE = 4;
+
+  let count = Math.ceil(projectsInfo.length / PER_PAGE);
+  let _DATA = usePagination(projectsInfo, PER_PAGE);
+
 
   useEffect(() => {
 
@@ -49,8 +86,8 @@ const Projects: React.FC<Props> = (props) => {
         projectsFromAPI[i].github = dataFromGit[i].html_url;
       }
 
-      console.log(projectsFromAPI)
       setProjectsInfo(projectsFromAPI)
+
     })();
   }, [])
 
@@ -75,12 +112,31 @@ const Projects: React.FC<Props> = (props) => {
 
   ]
 
+  const handleChange = async (e: any, p: any) => {
+    console.log(e)
+    console.log(p)
+    setPage(p);
+    _DATA.jump(p);
+  };
+
+
 
 
   return (
     <div>
+      <PaginationContainer>
+        <Pagination
+        classes={{ ul: classes.ul }}
+          count={count}
+          size="large"
+          page={page}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChange}
+        />
+      </PaginationContainer>
       <ProjectsContainer id="projects">
-        {projectsInfo.map((item: any) => (
+        {_DATA.currentData().map((item: any) => (
           <Card
             key={item.id}
             title={item.projectName}

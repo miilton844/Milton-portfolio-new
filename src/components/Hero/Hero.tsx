@@ -5,6 +5,7 @@ import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./hero.css"
 import { Link } from 'react-scroll';
+import fileSaver from "file-saver"
 
 const GeneralInfoContainer = styled.div`
 position: relative;
@@ -111,7 +112,7 @@ display: block;
 color:white;
 background: ${props => props.theme.buttons};
 border:2px solid white;
-padding: 16px 32px;
+padding: 1rem 1rem;
 text-align: center;
 text-decoration: none;
 display: inline-block;
@@ -141,8 +142,12 @@ margin-bottom:1rem;
 
 
 const Hero = () => {
-    const handleClick = () => {
-        // aboutRef.current.scrollIntoView({ behavior: 'smooth' })
+
+    const saveFile = () => {
+        fileSaver.saveAs(
+            process.env.PUBLIC_URL + "/CV.pdf",
+          "CV.pdf"
+        );
     }
 
     return (
@@ -159,9 +164,9 @@ const Hero = () => {
                         {/* </AboutMeButton> */}
                 </GeneralInfoContainer2>
                 <div className='icons'>
-                    <FontAwesomeIcon icon={faFileDownload} />
-                    <FontAwesomeIcon icon={faGithub} />
-                    <FontAwesomeIcon icon={faLinkedin} />
+                    <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
+                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }}  />
+                    <FontAwesomeIcon icon={faLinkedin} onClick={(e)=>{window.open('https://www.linkedin.com/in/milton-lerner-b22176156/')}} />
                 </div>
             </GeneralInfoContainer>
 

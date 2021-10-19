@@ -4,6 +4,7 @@ import "./Home.css"
 import { About } from "../../components/About/About";
 import { Projects } from "../../components/Projects/Projects"
 import { Hero } from "../../components/Hero/Hero"
+import { Footer } from "../../../src/components/Footer/Footer"
 
 // https://www.google.com/search?q=fullstack+developer+svg+free&tbm=isch&chips=q:fullstack+developer+svg+free,online_chips:vector:atrgsRuBOkQ%3D&hl=en&sa=X&ved=2ahUKEwjOo5PL6rLzAhUMmhoKHbFhDAsQ4lYoBHoECAEQGQ&biw=1519&bih=664
 
@@ -12,7 +13,6 @@ interface Props {
 }
 
 const Home: React.FC<Props> = (props) => {
-
     return (
         <div>
             <OpenningContainer>
