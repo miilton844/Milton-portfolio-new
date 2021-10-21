@@ -92,12 +92,8 @@ span{
 `
 
 // https://www.youtube.com/watch?v=s-_8wRbuPSM
-interface Props {
-    open?: boolean
-    theme: string
-}
 
-const Navbar: React.FC<Props> = (props) => {
+const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [toggled, setToggled] = useState(false)
 

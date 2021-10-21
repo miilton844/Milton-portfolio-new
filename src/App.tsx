@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Router>
       <ThemeProvider theme={darkMode.type === 'light' ? lightTheme : darkTheme}>
-        <Navbar theme={darkMode}></Navbar>
+        <Navbar></Navbar>
         <Home theme={darkMode}></Home>
         <Footer></Footer>
       </ThemeProvider>
