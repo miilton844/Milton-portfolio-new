@@ -71,7 +71,6 @@ interface Props {
   date: string
   deployPage: string
   githubPage: string
-  theme: string
 }
 
 

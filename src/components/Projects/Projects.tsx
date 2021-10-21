@@ -36,11 +36,8 @@ margin-top:-1px;
 flex-direction:column;
 }  
 `
-interface Props {
-  theme: string
-}
 
-const Projects: React.FC<Props> = (props) => {
+const Projects: React.FC = () => {
   const [projectsInfo, setProjectsInfo] = useState([]);
   const useStyles = makeStyles(() => ({
     ul: {
@@ -129,7 +126,6 @@ const Projects: React.FC<Props> = (props) => {
             deployPage={item.deploy}
             githubPage={item.github}
             actions={buttons}
-            theme={props.theme}
           />
         ))}
 

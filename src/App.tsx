@@ -1,4 +1,4 @@
-import { BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Home } from "./pages/Home/Home";
 import { ThemeProvider } from "styled-components";
@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <ThemeProvider theme={darkMode.type === 'light' ? lightTheme : darkTheme}>
         <Navbar></Navbar>
-        <Home theme={darkMode}></Home>
+        <Home></Home>
         <Footer></Footer>
       </ThemeProvider>
     </Router>

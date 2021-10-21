@@ -8,11 +8,8 @@ import { Footer } from "../../../src/components/Footer/Footer"
 
 // https://www.google.com/search?q=fullstack+developer+svg+free&tbm=isch&chips=q:fullstack+developer+svg+free,online_chips:vector:atrgsRuBOkQ%3D&hl=en&sa=X&ved=2ahUKEwjOo5PL6rLzAhUMmhoKHbFhDAsQ4lYoBHoECAEQGQ&biw=1519&bih=664
 
-interface Props {
-    theme: string
-}
 
-const Home: React.FC<Props> = (props) => {
+const Home: React.FC = () => {
     return (
         <div>
             <OpenningContainer>
@@ -22,7 +19,7 @@ const Home: React.FC<Props> = (props) => {
                 <img className='circles' src={circles} alt="circleSvg"></img>
             </OpenningContainer>
             <About></About>
-            <Projects theme={props.theme}></Projects>
+            <Projects></Projects>
         </div>)
 }
 
