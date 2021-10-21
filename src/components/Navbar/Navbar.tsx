@@ -3,54 +3,6 @@ import { useState} from "react"
 import { Toggle } from '../Toggle/Toggle'
 import { Link } from 'react-scroll';
 
-// https://www.youtube.com/watch?v=s-_8wRbuPSM
-interface Props {
-    open?: boolean
-    theme: string
-}
-
-const Navbar: React.FC<Props> = (props) => {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const [toggled, setToggled] = useState(false)
-
-    const change = (isOpen: boolean) => {
-        setIsOpen(!isOpen)
-    }
-
-    const toggle = (event: any) => {
-        console.log(toggled)
-        setToggled(event.target.checked)
-    }
-
-
-
-    return <Nav>
-        <Logo >
-            Milton <span>Codes</span>
-        </Logo>
-        <Hamburger onClick={() => change(isOpen)}>
-            <span></span>
-            <span></span>
-            <span></span>
-        </Hamburger>
-        <Menu open={isOpen}>
-            <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
-                About
-            </MenuLink>
-
-            <MenuLink activeClass="active" to="projects" spy={true} smooth={true} duration={1000}>
-                Projects
-            </MenuLink>
-
-            <MenuLink activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>
-                Contact
-            </MenuLink>
-
-            <Toggle onChange={(event: any) => toggle(event)}> </Toggle>
-        </Menu>
-    </Nav>
-}
 
 const Nav = styled.div`
 padding:0 2rem;
@@ -138,6 +90,50 @@ span{
     color:#FFFD95;
 }
 `
+
+// https://www.youtube.com/watch?v=s-_8wRbuPSM
+interface Props {
+    open?: boolean
+    theme: string
+}
+
+const Navbar: React.FC<Props> = (props) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [toggled, setToggled] = useState(false)
+
+    const change = (isOpen: boolean) => {
+        setIsOpen(!isOpen)
+    }
+
+    const toggle = (event: any) => {
+        console.log(toggled)
+        setToggled(event.target.checked)
+    }
+
+    return <Nav>
+        <Logo >
+            Milton <span>Codes</span>
+        </Logo>
+        <Hamburger onClick={() => change(isOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </Hamburger>
+        <Menu open={isOpen}>
+            <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
+                About
+            </MenuLink>
+            <MenuLink activeClass="active" to="projects" spy={true} smooth={true} duration={1000}>
+                Projects
+            </MenuLink>
+
+            <MenuLink activeClass="active" to="contact" spy={true} smooth={true} duration={1000}>
+                Contact
+            </MenuLink>
+            <Toggle onChange={(event: any) => toggle(event)}> </Toggle>
+        </Menu>
+    </Nav>
+}
 
 export { Navbar }
 

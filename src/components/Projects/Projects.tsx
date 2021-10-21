@@ -11,23 +11,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import "./Projects.css"
 
-
-
-
 const PaginationContainer = styled.div`
 background: ${props => props.theme.aboutBodyInfo};
 margin-top:-1px;
 align-items: center;
     justify-content: center;
     color:white
-
-    
-
-
-
 `
 const ProjectsContainer = styled.div`
-
 background: ${props => props.theme.aboutBodyInfo};
 padding-left:1rem;
 padding-right:1rem;
@@ -41,16 +32,13 @@ flex: 0 0 200px; /* play with this number */
 align-items:center;
 margin-top:-1px;
 
-
 @media (max-width:812px){
 flex-direction:column;
 }  
 `
-
 interface Props {
   theme: string
 }
-
 
 const Projects: React.FC<Props> = (props) => {
   const [projectsInfo, setProjectsInfo] = useState([]);
@@ -58,13 +46,12 @@ const Projects: React.FC<Props> = (props) => {
     ul: {
       "& .MuiPaginationItem-root": {
         color: "black",
-        background:"white"
+        background: "white"
       },
     }
 
-    
   }));
-  
+
   const classes = useStyles();
 
   let [page, setPage] = useState(1);
@@ -119,14 +106,11 @@ const Projects: React.FC<Props> = (props) => {
     _DATA.jump(p);
   };
 
-
-
-
   return (
     <div>
       <PaginationContainer>
         <Pagination
-        classes={{ ul: classes.ul }}
+          classes={{ ul: classes.ul }}
           count={count}
           size="large"
           page={page}

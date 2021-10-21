@@ -25,15 +25,9 @@ flex-direction:column;
 }
 
 @media (max-width:540px){
-/* width:initial; */
 top:4rem;
-/* left:initial; */
 
 }
-
-
-
-
 
 @media (max-width:360px){
 top:2rem;
