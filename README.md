@@ -9,7 +9,7 @@ I've developed it with React,Typescript,styled. It uses GitHub API to get my rep
 This project is actively updated.
 
 ![image](https://user-images.githubusercontent.com/62177111/138614070-862654c3-b36f-4078-ab72-9531775f50ec.png)
-![image](https://user-images.githubusercontent.com/62177111/138614089-47229ddb-c92b-4b59-aa10-30670193eda6.png)
+![image](https://user-images.githubusercontent.com/62177111/138614144-fa2580f1-ade4-4155-b2c3-e4b619432191.png)
 
 
 
