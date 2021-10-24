@@ -6,8 +6,8 @@ import { Card } from "../Card/Card";
 import { projectsService } from "../../services/projects"
 import { useEffect, useState } from "react"
 import usePagination from "../Pagination/Pagination";
-// import { Pagination } from "@material-ui/lab";
-// import { makeStyles } from "@material-ui/core/styles";
+import { Pagination } from "@material-ui/lab";
+import { makeStyles } from "@material-ui/core/styles";
 
 import "./Projects.css"
 
@@ -39,17 +39,17 @@ flex-direction:column;
 
 const Projects: React.FC = () => {
   const [projectsInfo, setProjectsInfo] = useState([]);
-  // const useStyles = makeStyles(() => ({
-  //   ul: {
-  //     "& .MuiPaginationItem-root": {
-  //       color: "black",
-  //       background: "white"
-  //     },
-  //   }
+  const useStyles = makeStyles(() => ({
+    ul: {
+      "& .MuiPaginationItem-root": {
+        color: "black",
+        background: "white"
+      },
+    }
 
-  // }));
+  }));
 
-  // const classes = useStyles();
+  const classes = useStyles();
 
   let [page, setPage] = useState(1);
   const PER_PAGE = 4;
@@ -106,7 +106,7 @@ const Projects: React.FC = () => {
   return (
     <div>
       <PaginationContainer>
-        {/* <Pagination
+        <Pagination
           classes={{ ul: classes.ul }}
           count={count}
           size="large"
@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
           variant="outlined"
           shape="rounded"
           onChange={handleChange}
-        /> */}
+        />
       </PaginationContainer>
       <ProjectsContainer id="projects">
         {_DATA.currentData().map((item: any) => (
