@@ -8,7 +8,10 @@ const getProjects = async () => {
   snapshot.forEach((doc) => {
     console.log(doc.id, "=>", doc.data());
     projects.push(doc.data())
+    projects[projects.length - 1].id = parseInt(doc.id)
+
   });
+  console.log(projects)
   return projects;
 }
 

@@ -61,8 +61,11 @@ const Projects: React.FC = () => {
   useEffect(() => {
 
     (async () => {
-      let projectsFromAPI: any = await projectsService.GetProjectsDetails();
+      let projectsFromAPI: any = await projectsService.fetchProjectsFromFirebase();
       let dataFromGit: any = await projectsService.fetchInfoFromGithub();
+      console.log(projectsFromAPI);
+      console.log(dataFromGit)
+      dataFromGit = dataFromGit.filter((project: any) => { return project.private === false });
       projectsFromAPI.sort((item1: any, item2: any) => { return item1.id - item2.id })
       dataFromGit.sort((item1: any, item2: any) => { return item1.id - item2.id });
 

@@ -27,9 +27,9 @@ const GetProjectsDetails = async (id, token) => {
 	let projectsInfo = [];
 	const projectsCol = collection(db, 'projects');
 	const projectSnapShot = await getDocs(projectsCol);
-		const projectsList = projectSnapShot.docs.map(doc => {
+	const projectsList = projectSnapShot.docs.map(doc => {
 		projectsInfo.push(doc.data())
-		projectsInfo[projectsInfo.length-1].id = doc.id
+		projectsInfo[projectsInfo.length - 1].id = doc.id
 	})
 	return projectsInfo;
 };
@@ -41,11 +41,21 @@ const fetchInfoFromGithub = async () => {
 			data = response.data;
 		});
 
-		return data;
+	return data;
 
+}
+
+const fetchProjectsFromFirebase = async () => {
+	let data;
+	await axios.get(BASE_API + '/projects/list')
+		.then((response) => {
+			data = response.data.data
+		})
+		return data;
 }
 
 export const projectsService = {
 	GetProjectsDetails,
-	fetchInfoFromGithub
+	fetchInfoFromGithub,
+	fetchProjectsFromFirebase
 }
