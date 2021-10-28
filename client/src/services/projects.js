@@ -51,7 +51,7 @@ const fetchProjectsFromFirebase = async () => {
 		.then((response) => {
 			data = response.data.data
 		})
-		return data;
+	return data;
 }
 
 export const projectsService = {

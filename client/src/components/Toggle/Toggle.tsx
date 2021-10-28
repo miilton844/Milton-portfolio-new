@@ -3,6 +3,32 @@ import styled from "styled-components"
 import { useDispatch } from 'react-redux'
 import { darkMode } from "../../redux/actions/darkMode"
 
+
+const Toggle = ({ onChange }: any) => {
+    const dispatch = useDispatch();
+    const darkModeInfo = useTypedSelector(state => {
+        return state.darkMode
+    });
+
+    const updateTheme = () => {
+        if (darkModeInfo.type === 'light') {
+            dispatch(darkMode('dark'))
+        }
+        else {
+            dispatch(darkMode('light'))
+        }
+    }
+
+    return (
+        <InputWrapper>
+            <Input type='checkbox' onChange={onChange} ></Input>
+            <Slider onClick={updateTheme}></Slider>
+        </InputWrapper>
+    )
+}
+
+export { Toggle }
+
 const InputWrapper = styled.label`
 position:relative;
 margin:10px;
@@ -57,27 +83,3 @@ transition:background-color 0.2s ;
  }
 
 `
-const Toggle = ({ onChange }: any) => {
-    const dispatch = useDispatch();
-    const darkModeInfo = useTypedSelector(state => {
-        return state.darkMode
-    });
-
-    const updateTheme = () => {
-        if (darkModeInfo.type === 'light') {
-            dispatch(darkMode('dark'))
-        }
-        else {
-            dispatch(darkMode('light'))
-        }
-    }
-
-    return (
-        <InputWrapper>
-            <Input type='checkbox' onChange={onChange} ></Input>
-            <Slider onClick={updateTheme}></Slider>
-        </InputWrapper>
-    )
-}
-
-export { Toggle }

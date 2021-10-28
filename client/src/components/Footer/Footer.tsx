@@ -7,6 +7,33 @@ import fileSaver from "file-saver"
 
 
 
+
+const Footer = () => {
+    const saveFile = () => {
+        fileSaver.saveAs(
+            process.env.PUBLIC_URL + "/CV.pdf",
+            "CV.pdf"
+        );
+    }
+
+    return (
+        <div>
+            <FooterContainer id="contact">
+                <Contact>Contact me!</Contact>
+                <Icons>
+                    <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
+                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
+                    <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
+                </Icons>
+
+            </FooterContainer>
+
+
+        </div>)
+}
+
+export { Footer }
+
 const FooterContainer = styled.div`
 padding:0 2rem;
 display:flex;
@@ -40,29 +67,3 @@ const Icons = styled.div`
     margin-bottom:0.5rem;
     cursor: pointer;
 `
-
-const Footer = () => {
-    const saveFile = () => {
-        fileSaver.saveAs(
-            process.env.PUBLIC_URL + "/CV.pdf",
-            "CV.pdf"
-        );
-    }
-
-    return (
-        <div>
-            <FooterContainer id="contact">
-                <Contact>Contact me!</Contact>
-                <Icons>
-                    <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
-                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
-                    <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
-                </Icons>
-
-            </FooterContainer>
-
-
-        </div>)
-}
-
-export { Footer }

@@ -7,6 +7,43 @@ import "./hero.css"
 import { Link } from 'react-scroll';
 import fileSaver from "file-saver"
 
+
+
+const Hero = () => {
+
+    const saveFile = () => {
+        fileSaver.saveAs(
+            process.env.PUBLIC_URL + "/CV.pdf",
+            "CV.pdf"
+        );
+    }
+
+    return (
+        <div>
+            <GeneralInfoContainer>
+                <GeneralInfoContainer2>
+                    <div className='openning'>Milton Lerner</div>
+                    <div className='sub-openning'>Fullstack web developer</div>
+
+                    {/* <AboutMeButton className='about-me-button' onClick={handleClick}> */}
+                    <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
+                        About
+                    </MenuLink>
+                    {/* </AboutMeButton> */}
+                </GeneralInfoContainer2>
+                <div className='icons'>
+                    <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
+                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
+                    <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
+                </div>
+            </GeneralInfoContainer>
+
+        </div>
+    )
+}
+
+export { Hero }
+
 const GeneralInfoContainer = styled.div`
 position: relative;
 display:flex;
@@ -121,40 +158,3 @@ margin-top:2rem;
 margin-bottom:2rem;
 }  
 `
-
-
-const Hero = () => {
-
-    const saveFile = () => {
-        fileSaver.saveAs(
-            process.env.PUBLIC_URL + "/CV.pdf",
-            "CV.pdf"
-        );
-    }
-
-    return (
-        <div>
-            <GeneralInfoContainer>
-                <GeneralInfoContainer2>
-                    <div className='openning'>Milton Lerner</div>
-                    <div className='sub-openning'>Fullstack web developer</div>
-
-                    {/* <AboutMeButton className='about-me-button' onClick={handleClick}> */}
-                    <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
-                        About
-                    </MenuLink>
-                    {/* </AboutMeButton> */}
-                </GeneralInfoContainer2>
-                <div className='icons'>
-                    <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
-                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
-                    <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
-                </div>
-            </GeneralInfoContainer>
-
-        </div>
-    )
-}
-
-export { Hero }
-

@@ -8,34 +8,8 @@ import { useEffect, useState } from "react"
 import usePagination from "../Pagination/Pagination";
 import { Pagination } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core/styles";
-
 import "./Projects.css"
 
-const PaginationContainer = styled.div`
-background: ${props => props.theme.aboutBodyInfo};
-margin-top:-1px;
-align-items: center;
-    justify-content: center;
-    color:white
-`
-const ProjectsContainer = styled.div`
-background: ${props => props.theme.aboutBodyInfo};
-padding-left:1rem;
-padding-right:1rem;
-padding-top:1rem;
-padding-bottom:1rem;
-flex-direction:row; 
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-flex: 0 0 200px; /* play with this number */
-align-items:center;
-margin-top:-1px;
-
-@media (max-width:812px){
-flex-direction:column;
-}  
-`
 
 const Projects: React.FC = () => {
   const [projectsInfo, setProjectsInfo] = useState([]);
@@ -46,7 +20,6 @@ const Projects: React.FC = () => {
         background: "white"
       },
     }
-
   }));
 
   const classes = useStyles();
@@ -63,11 +36,12 @@ const Projects: React.FC = () => {
     (async () => {
       let projectsFromAPI: any = await projectsService.fetchProjectsFromFirebase();
       let dataFromGit: any = await projectsService.fetchInfoFromGithub();
-      console.log(projectsFromAPI);
-      console.log(dataFromGit)
-      dataFromGit = dataFromGit.filter((project: any) => { return project.private === false });
+      const intersectedArrays = intersectArrays(projectsFromAPI, dataFromGit)
+      projectsFromAPI = intersectedArrays.commonProjectsFromAPI;
+      dataFromGit = intersectedArrays.commonDataFromGit;
       projectsFromAPI.sort((item1: any, item2: any) => { return item1.id - item2.id })
       dataFromGit.sort((item1: any, item2: any) => { return item1.id - item2.id });
+      console.log(dataFromGit)
 
       for (let i = 0; i < projectsFromAPI.length; i++) {
         projectsFromAPI[i].github = dataFromGit[i].html_url;
@@ -106,6 +80,24 @@ const Projects: React.FC = () => {
     _DATA.jump(p);
   };
 
+  const intersectArrays = (projectsFromAPI: any[], dataFromGit: any[]) => {
+    let commonDataFromGit = [];
+    let commonProjectsFromAPI = [];
+
+    for (let i = 0; i < projectsFromAPI.length; i++) {
+      for (let j = 0; j < dataFromGit.length; j++) {
+        if (projectsFromAPI[i].id == dataFromGit[j].id) {
+          commonDataFromGit.push(dataFromGit[j]);
+          commonProjectsFromAPI.push(projectsFromAPI[i]);
+        }
+      }
+    }
+    return ({
+      commonDataFromGit: commonDataFromGit,
+      commonProjectsFromAPI: commonProjectsFromAPI
+    })
+  }
+
   return (
     <div>
       <PaginationContainer>
@@ -137,5 +129,34 @@ const Projects: React.FC = () => {
   )
 }
 
+
+
 export { Projects }
+
+const PaginationContainer = styled.div`
+background: ${props => props.theme.aboutBodyInfo};
+margin-top:-1px;
+align-items: center;
+    justify-content: center;
+    color:white
+`
+const ProjectsContainer = styled.div`
+background: ${props => props.theme.aboutBodyInfo};
+padding-left:1rem;
+padding-right:1rem;
+padding-top:1rem;
+padding-bottom:1rem;
+flex-direction:row; 
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+flex: 0 0 200px; /* play with this number */
+align-items:center;
+margin-top:-1px;
+
+@media (max-width:812px){
+flex-direction:column;
+}  
+`
+
 

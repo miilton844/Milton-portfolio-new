@@ -1,5 +1,24 @@
-import styled from "styled-components"
-import milton from "../../pages/Home/MILTON.jpg"
+import styled from "styled-components";
+import milton from "../../pages/Home/MILTON.jpg";
+
+const About = () => {
+  return (
+    <div>
+      <AboutContainer id="about" >
+        <h1>About</h1>
+        <AboutMain>
+          <div> I'm a former financial analyst with over 4 years of experience, seeking an entry-level position to begin my career as a web developer.
+            I have high learning abilities, high personal standards, attention to details, and passion for expanding my horizons.
+            A team player with good interpersonal skills with both peers and superiors.
+          </div>
+          <img src={milton} alt="miltonPic"></img>
+        </AboutMain>
+      </AboutContainer>
+    </div>
+  );
+}
+
+export { About };
 
 const AboutContainer = styled.div`
   h1{
@@ -7,12 +26,11 @@ margin:0px;
 padding-top:10px;
 color:white;
  }
- background: ${props => props.theme.aboutBodyInfo};
+background: ${props => props.theme.aboutBodyInfo};
 text-align:center;
 font-size:1rem;
-    text-shadow: 2px 2px 4px #000000;
-
-`
+text-shadow: 2px 2px 4px #000000;
+`;
 
 const AboutMain = styled.div`
 display:flex;
@@ -31,39 +49,12 @@ img{
     margin-bottom:20px;
     margin-right:20px;
     margin-left:20px;
-
-
 }
 div{
     line-height: 2;
-    
 }
 
 @media (max-width:812px){
 flex-direction:column;
 }  
-`
-
-
-const About = () => {
-  return (
-    <div>
-      <AboutContainer id="about" >
-        <h1>About</h1>
-        <AboutMain>
-          <div> I'm a former financial analyst with over 4 years of experience, seeking an entry-level position to begin my career as a web developer.
-            I have high learning abilities, high personal standards, attention to details, and passion for expanding my horizons.
-            A team player with good interpersonal skills with both peers and superiors.
-          </div>
-          <img src={milton} alt="miltonPic"></img>
-        </AboutMain>
-
-      </AboutContainer>
-
-
-    </div>
-  )
-}
-
-export { About }
-
+`;
