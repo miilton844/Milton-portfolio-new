@@ -4,7 +4,7 @@ Deployment : https://milton-portfolio.herokuapp.com/
 Please notice that the deployed app might be asleep, so the first time you try to launch it will probably hang up. Dont panic!!!! :), this is an expected behaviour of the app due to it being served in a freemium model. Please try to launch again after some seconds.
 
 This is a Coderz project challenge. In this project I have built a portfolio website where. There are 3 sections: hero, about, projects.
-I've developed it with React,Typescript,styled, Nodejs and Firebase. It uses GitHub API to get my repository information and I also get from the firebase database additional data which I use . I will add soon a simple CLI to add projects. 
+I've developed it with React,Typescript,styled, Nodejs and Firebase. It uses GitHub API to get my repository information and I also get from the firebase database additional data which I use . I will add soon a simple CLI to add projects information to firebase database. 
 
 This project is actively updated.
 
