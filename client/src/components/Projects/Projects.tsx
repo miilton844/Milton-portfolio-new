@@ -8,10 +8,14 @@ import { useEffect, useState } from "react"
 import usePagination from "../Pagination/Pagination";
 import { Pagination } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core/styles";
+import { CardDetails } from '../../interfaces/interfaces'
+
 import "./Projects.css"
 
 
-const Projects: React.FC = () => {
+
+const Projects: React.FC<CardDetails> = (props) => {
+
   const [projectsInfo, setProjectsInfo] = useState([]);
   const useStyles = makeStyles(() => ({
     ul: {
@@ -86,7 +90,7 @@ const Projects: React.FC = () => {
 
     for (let i = 0; i < projectsFromAPI.length; i++) {
       for (let j = 0; j < dataFromGit.length; j++) {
-        if (projectsFromAPI[i].id == dataFromGit[j].id) {
+        if (projectsFromAPI[i].id === dataFromGit[j].id) {
           commonDataFromGit.push(dataFromGit[j]);
           commonProjectsFromAPI.push(projectsFromAPI[i]);
         }

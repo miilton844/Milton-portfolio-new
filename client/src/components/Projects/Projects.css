@@ -1,9 +1,9 @@
+/* //pagination component styles from material ui */
 .MuiPagination-ul{
     align-items: center;
     justify-content: center;
     padding-top:5px;
     padding-bottom:5px;
-    /* color:white */
 }
 
 .MuiPagination-ul>li>button:hover{
@@ -14,11 +14,9 @@
     background-color: grey;
 }
 
-
 .MuiPagination-ul>li>button.Mui-selected{
     background-color: grey;
     cursor:context-menu;
-
 }
 
 .MuiPaginationItem-root{

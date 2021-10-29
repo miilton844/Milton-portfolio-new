@@ -2,20 +2,12 @@ import styled from "styled-components"
 import { faInternetExplorer } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {CardDetails} from '../../interfaces/interfaces'
 
 
-interface Props {
-  title: string
-  description: string
-  actions: any
-  date: string
-  deployPage: string
-  githubPage: string
-}
 
 // https://jsmanifest.com/build-reusable-responsive-react-card-with-styled-components/
-const Card: React.FC<Props> = (props) => {
-
+const Card: React.FC<CardDetails> = (props) => {
   return (
     <div >
       <Container>
@@ -27,7 +19,6 @@ const Card: React.FC<Props> = (props) => {
         <Actions>
           <ActionButton onClick={(e) => { window.open(props.githubPage); }}> <FontAwesomeIcon icon={faGithub} /></ActionButton>
           <ActionButton onClick={(e) => {
-            console.log(props.deployPage)
             if (props.deployPage === undefined) {
               alert('for now only github page')
               return;

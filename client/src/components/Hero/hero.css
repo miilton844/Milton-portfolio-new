@@ -42,11 +42,7 @@
 }
 
 /* //notice that if height is not 0 px there is a gap in the front  */
-.check{
-    justify-content: space-between;
-    align-items: center;
-    height:0px;
-}
+
 
 @media only screen and (max-width: 812px) {
     .openning{
