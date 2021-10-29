@@ -12,9 +12,7 @@ import { CardDetails } from '../../interfaces/interfaces'
 
 import "./Projects.css"
 
-
-
-const Projects: React.FC<CardDetails> = (props) => {
+const Projects: React.FC<CardDetails> = () => {
 
   const [projectsInfo, setProjectsInfo] = useState([]);
   const useStyles = makeStyles(() => ({
@@ -45,8 +43,6 @@ const Projects: React.FC<CardDetails> = (props) => {
       dataFromGit = intersectedArrays.commonDataFromGit;
       projectsFromAPI.sort((item1: any, item2: any) => { return item1.id - item2.id })
       dataFromGit.sort((item1: any, item2: any) => { return item1.id - item2.id });
-      console.log(dataFromGit)
-
       for (let i = 0; i < projectsFromAPI.length; i++) {
         projectsFromAPI[i].github = dataFromGit[i].html_url;
       }
@@ -54,7 +50,7 @@ const Projects: React.FC<CardDetails> = (props) => {
       setProjectsInfo(projectsFromAPI)
 
     })();
-  }, [])
+  }, []);
 
 
   const buttons = [
@@ -74,12 +70,9 @@ const Projects: React.FC<CardDetails> = (props) => {
         </>
       ),
     },
-
-  ]
+  ];
 
   const handleChange = async (e: any, p: any) => {
-    console.log(e)
-    console.log(p)
     setPage(p);
     _DATA.jump(p);
   };
@@ -99,8 +92,8 @@ const Projects: React.FC<CardDetails> = (props) => {
     return ({
       commonDataFromGit: commonDataFromGit,
       commonProjectsFromAPI: commonProjectsFromAPI
-    })
-  }
+    });
+  };
 
   return (
     <div>
@@ -127,15 +120,12 @@ const Projects: React.FC<CardDetails> = (props) => {
             actions={buttons}
           />
         ))}
-
       </ProjectsContainer>
     </div>
-  )
+  );
 }
 
-
-
-export { Projects }
+export { Projects };
 
 const PaginationContainer = styled.div`
 background: ${props => props.theme.aboutBodyInfo};

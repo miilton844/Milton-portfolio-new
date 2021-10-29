@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import milton from "../../pages/Home/MILTON.jpg";
 
 const About = () => {
   return (
@@ -11,7 +10,7 @@ const About = () => {
             I have high learning abilities, high personal standards, attention to details, and passion for expanding my horizons.
             A team player with good interpersonal skills with both peers and superiors.
           </div>
-          <img src={milton} alt="miltonPic"></img>
+          <img src={process.env.PUBLIC_URL + "/assets/MILTON.jpg"} alt="miltonPic"></img>
         </AboutMain>
       </AboutContainer>
     </div>

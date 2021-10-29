@@ -27,8 +27,8 @@ const Card: React.FC<CardDetails> = (props) => {
           }}><FontAwesomeIcon icon={faInternetExplorer} /></ActionButton>
         </Actions>
       </Container>
-
-    </div>);
+    </div>
+    );
 }
 
 export { Card };

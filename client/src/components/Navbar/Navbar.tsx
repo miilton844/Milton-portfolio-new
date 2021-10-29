@@ -1,24 +1,21 @@
-import styled from "styled-components"
-import { useState} from "react"
+import styled from "styled-components";
+import { useState } from "react";
 import { Toggle } from '../Toggle/Toggle'
 import { Link } from 'react-scroll';
 
-
-
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [toggled, setToggled] = useState(false)
+    const [toggled, setToggled] = useState(false);
 
     const change = (isOpen: boolean) => {
-        setIsOpen(!isOpen)
-    }
+        setIsOpen(!isOpen);
+    };
 
     const toggle = (event: any) => {
-        console.log(toggled)
-        setToggled(event.target.checked)
-    }
+        setToggled(event.target.checked);
+    };
 
-    return <Nav>
+    return (<Nav>
         <Logo >
             Milton <span>Codes</span>
         </Logo>
@@ -41,9 +38,10 @@ const Navbar: React.FC = () => {
             <Toggle onChange={(event: any) => toggle(event)}> </Toggle>
         </Menu>
     </Nav>
+    );
 }
 
-export { Navbar }
+export { Navbar };
 
 const Nav = styled.div`
 padding:0 2rem;
@@ -55,7 +53,7 @@ flex-wrap:wrap;
 background: ${(props) => {
         return props.theme.navBar
     }};
-`
+`;
 const Hamburger = styled.div`
 display:none;
 flex-direction:column;
@@ -72,7 +70,7 @@ span{
 @media (max-width:768px){
     display:flex;
 }
-`
+`;
 const Menu = styled.div<{ open: boolean }>`
 background-color: ${({ open }: any) => open};
 
@@ -87,10 +85,8 @@ position:relative;
     width:100%;
     max-height:${({ open }) => (open ? "300px" : "0px")}
 }
-
-`
+`;
 const MenuLink = styled(Link)`
-
 padding:1rem 2rem;
 cursor:pointer;
 text-align:center;
@@ -107,11 +103,8 @@ font-size:0.9rem;
 @media (max-width:812px){
 cursor:none;
 }
+`;
 
-
-
-
-`
 const Logo = styled.a`
 padding: 1rem 0;
 color: white;
@@ -120,16 +113,14 @@ font-weight:800;
 font-size:1.7rem;
 text-decoration:none;
 
-
 span{
     font-weight:300;
-    font-size:1.3rem;
-    
+    font-size:1.3rem;    
 }
 
 &:hover{
     color:#FFFD95;
 }
-`
+`;
 
 // https://www.youtube.com/watch?v=s-_8wRbuPSM
