@@ -1,54 +1,51 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./hero.css"
+import "./hero.css";
 import { Link } from 'react-scroll';
-import fileSaver from "file-saver"
-
+import fileSaver from "file-saver";
+import circles from "./circles.svg";
 
 
 const Hero = () => {
-
     const saveFile = () => {
         fileSaver.saveAs(
             process.env.PUBLIC_URL + "/CV.pdf",
             "CV.pdf"
         );
-    }
+    };
 
     return (
-        <div>
-            <GeneralInfoContainer>
-                <GeneralInfoContainer2>
-                    <div className='openning'>Milton Lerner</div>
-                    <div className='sub-openning'>Fullstack web developer</div>
-
-                    {/* <AboutMeButton className='about-me-button' onClick={handleClick}> */}
-                    <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
-                        About
-                    </MenuLink>
-                    {/* </AboutMeButton> */}
-                </GeneralInfoContainer2>
-                <div className='icons'>
-                    <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
-                    <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
-                    <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
-                </div>
-            </GeneralInfoContainer>
-
-        </div>
-    )
+        <HeroContainer>
+            <LeftSubContainer>
+                <OpeningParagraph>Milton Lerner</OpeningParagraph>
+                <OpeningParagraph2>Fullstack web developer</OpeningParagraph2>
+                <MenuLink activeClass="active" to="about" spy={true} smooth={true} duration={1000}>
+                    About
+                </MenuLink>
+            <div className='icons'>
+                <FontAwesomeIcon icon={faFileDownload} onClick={(e) => { saveFile(); }} />
+                <FontAwesomeIcon icon={faGithub} onClick={(e) => { window.open('https://github.com/miilton844'); }} />
+                <FontAwesomeIcon icon={faLinkedin} onClick={(e) => { window.open('https://www.linkedin.com/in/milton-lerner-b22176156/') }} />
+            </div>
+            </LeftSubContainer>
+            <Img src={circles} alt="circleSvg"></Img>
+        </HeroContainer>
+    );
 }
 
-export { Hero }
+export { Hero };
 
-const GeneralInfoContainer = styled.div`
+const Img = styled.img`
+        width:100%;
+        height:auto;`;
+
+const HeroContainer = styled.div`
 position: relative;
 display:flex;
 flex-direction:row;
-top:7rem;
 left:1rem;
 font-size:1rem;
 width:95%;
@@ -61,67 +58,27 @@ flex-direction:column;
 
 }
 
-@media (max-width:540px){
-top:4rem;
 
-}
 
-@media (max-width:360px){
-top:2rem;
-}
 
 @media (max-width:280px){
 width:initial;
-top:0rem;
 left:initial;
 }
 `
 
-const GeneralInfoContainer2 = styled.div`
+const LeftSubContainer = styled.div`
+position:absolute;
 display:flex;
 flex-direction:column;
 top:15rem;
 left:10rem;
-/* font-size:2rem; */
 
 @media (max-width:812px){
 width:initial;
 top:initial;
 left:initial;
 }
-`
-const AboutMeButton = styled.button`
-top:19rem;
-display: block;
-color:white;
-background: ${props => props.theme.buttons};
-border:2px solid white;
-padding: 16px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-width:10rem;
-font-size: 16px;
-margin-top:10px;
-margin-bottom:10px;
-margin-left:auto;
-margin-right:auto;
-border-radius:100px;    
-transition-duration: 0.4s;
-
-&:hover {
-cursor: pointer;
-
-background: ${props => props.theme.buttonsHover};
-color: white;
-}
-
-@media (max-width:812px){
-margin-left:auto;
-margin-right:auto;
-margin-top:1rem;
-margin-bottom:1rem;
-}  
 `
 
 const MenuLink = styled(Link)`
@@ -158,3 +115,43 @@ margin-top:2rem;
 margin-bottom:2rem;
 }  
 `
+const OpeningParagraph = styled.span`
+    display: block;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    font-size:4rem;
+    text-shadow: 2px 2px 4px #000000;
+    
+    @media only screen and (max-width: 812px) {
+        font-size: 3rem;
+    }
+
+    @media only screen and (max-width: 414px) {
+        font-size: 2rem;
+}
+
+@media only screen and (max-width: 280px) {
+        font-size: 1.5rem;   
+}
+`
+const OpeningParagraph2 = styled.span`
+    display: block;
+    font-weight: bold;
+    color:white;
+    text-align: center;
+    font-size:3rem;
+    text-shadow: 2px 2px 4px #000000;
+    @media only screen and (max-width: 812px) {
+        font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 414px) {
+        font-size: 1rem;
+}
+
+@media only screen and (max-width: 280px) {
+        font-size: 0.75rem;
+}
+`
+

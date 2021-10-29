@@ -8,28 +8,10 @@
     background-color:#000033
 }
 
-.openning{
-    display: block;
-    font-weight: bold;
-    color:white;
-    text-align: center;
-    font-size:4rem;
-    text-shadow: 2px 2px 4px #000000;
-
-}
-
-.sub-openning{
-    display: block;
-    font-weight: bold;
-    color:white;
-    text-align: center;
-    font-size:3rem;
-    text-shadow: 2px 2px 4px #000000;
-
-}
 
 
 .icons{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -42,18 +24,13 @@
 }
 
 /* //notice that if height is not 0 px there is a gap in the front  */
-
+.checks{
+    justify-content: space-between;
+    align-items: center;
+    height:0px;
+}
 
 @media only screen and (max-width: 812px) {
-    .openning{
-        font-size: 3rem;
-    }
-
-    .sub-openning{
-        font-size: 1.5rem;
-
-
-    }
     .check{
         flex-direction: column;
         width:initial;
@@ -62,31 +39,5 @@
         margin:auto;
 
     }
-}
-
-@media only screen and (max-width: 414px) {
-    .openning{
-        font-size: 2rem;
-    }
-    .sub-openning{
-        font-size: 1rem;
-
-
-    }
-
-}
-
-
-
-@media only screen and (max-width: 280px) {
-    .openning{
-        font-size: 1.5rem;
-    }
-    .sub-openning{
-        font-size: 0.75rem;
-
-
-    }
-
 }
 
