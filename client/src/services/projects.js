@@ -1,6 +1,4 @@
 import axios from "axios";
-// import firebase from "firebase/app";
-import "firebase/auth";
 
 const port = 3001;
 const BASE_API = `http://localhost:${port}`;
