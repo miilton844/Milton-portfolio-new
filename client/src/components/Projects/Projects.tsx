@@ -31,9 +31,7 @@ const Projects: React.FC<CardDetails> = () => {
   let count = Math.ceil(projectsInfo.length / PER_PAGE);
   let _DATA = usePagination(projectsInfo, PER_PAGE);
 
-
   useEffect(() => {
-
     (async () => {
       let projectsFromAPI: any = await projectsService.fetchProjectsFromFirebase();
       let dataFromGit: any = await projectsService.fetchInfoFromGithub();
@@ -45,7 +43,6 @@ const Projects: React.FC<CardDetails> = () => {
       for (let i = 0; i < projectsFromAPI.length; i++) {
         projectsFromAPI[i].github = dataFromGit[i].html_url;
       }
-
       setProjectsInfo(projectsFromAPI)
 
     })();
@@ -55,19 +52,12 @@ const Projects: React.FC<CardDetails> = () => {
   const buttons = [
     {
       key: 1,
-      label: (
-        <>
-          <FontAwesomeIcon icon={faGithub} />
-        </>
-      ),
+      label: (<><FontAwesomeIcon icon={faGithub} /></>),
     },
     {
       key: 2,
       label: (
-        <>
-          <FontAwesomeIcon icon={faInternetExplorer} />
-        </>
-      ),
+        <><FontAwesomeIcon icon={faInternetExplorer} /></>),
     },
   ];
 
@@ -131,8 +121,9 @@ const PaginationContainer = styled.div`
   margin-top:-1px;
   align-items: center;
   justify-content: center;
-  color:white
-`
+  color:white;
+`;
+
 const ProjectsContainer = styled.div`
   background: ${props => props.theme.aboutBodyInfo};
   padding-left:1rem;
@@ -150,6 +141,4 @@ const ProjectsContainer = styled.div`
   @media (max-width:812px){
     flex-direction:column;
   }  
-`
-
-
+`;

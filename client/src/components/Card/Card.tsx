@@ -3,9 +3,6 @@ import { faInternetExplorer } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CardDetails } from '../../interfaces/interfaces';
-
-
-
 // https://jsmanifest.com/build-reusable-responsive-react-card-with-styled-components/
 const Card: React.FC<CardDetails> = (props) => {
   return (

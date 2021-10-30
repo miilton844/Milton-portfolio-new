@@ -1,21 +1,20 @@
-import { useTypedSelector } from "../../redux/hooks/useTypeSelector"
-import styled from "styled-components"
-import { useDispatch } from 'react-redux'
-import { darkMode } from "../../redux/actions/darkMode"
-
+import { useTypedSelector } from "../../redux/hooks/useTypeSelector";
+import styled from "styled-components";
+import { useDispatch } from 'react-redux';
+import { darkMode } from "../../redux/actions/darkMode";
 
 const Toggle = ({ onChange }: any) => {
     const dispatch = useDispatch();
     const darkModeInfo = useTypedSelector(state => {
-        return state.darkMode
+        return state.darkMode;
     });
 
     const updateTheme = () => {
         if (darkModeInfo.type === 'light') {
-            dispatch(darkMode('dark'))
+            dispatch(darkMode('dark'));
         }
         else {
-            dispatch(darkMode('light'))
+            dispatch(darkMode('light'));
         }
     }
 
@@ -25,9 +24,9 @@ const Toggle = ({ onChange }: any) => {
             <Slider onClick={updateTheme}></Slider>
         </InputWrapper>
     )
-}
+};
 
-export { Toggle }
+export { Toggle };
 
 const InputWrapper = styled.label`
   position:relative;
@@ -57,21 +56,21 @@ const Slider = styled.span`
   position:relative;
   transition:background-color 0.2s ;
 
-   @media (max-width:1400px){
-     cursor:initial
-   }
-   
-   &:before{
-     content:"";
-     position:absolute;
-     top:2px;
-     left:2px;
-     width:21px;
-     height:21px;
-     border-radius:45px;
-     transition:0.2s;
-     background:#fff;
-     box-shadow:0 2px 4px;
+  @media (max-width:1400px){
+    cursor:initial
+  }
+
+  &:before{
+    content:"";
+    position:absolute;
+    top:2px;
+    left:2px;
+    width:21px;
+    height:21px;
+    border-radius:45px;
+    transition:0.2s;
+    background:#fff;
+    box-shadow:0 2px 4px;
    }
     &:active:before{
       width:28px;
