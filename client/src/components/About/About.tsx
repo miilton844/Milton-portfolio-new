@@ -41,16 +41,16 @@ const AboutMain = styled.div`
   text-shadow:none;
   color:${props => props.theme.textColor};
   img {
-     height:11rem;
-     width:11rem;
-     border-radius:500px;
-     margin-top:20px;
-     margin-bottom:20px;
-     margin-right:20px;
-     margin-left:20px;
+    height:11rem;
+    width:11rem;
+    border-radius:500px;
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-right:20px;
+    margin-left:20px;
   }
-  div{
-     line-height: 2;
+  div {
+    line-height: 2;
   }
 
     @media (max-width:812px){
