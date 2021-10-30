@@ -21,7 +21,7 @@ const OpenningContainer = styled.div`
 background: ${(props) => {
         return props.theme.mainBodyInfo
     }};
-`
+`;
 
 
 

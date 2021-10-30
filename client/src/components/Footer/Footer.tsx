@@ -11,7 +11,7 @@ const Footer = () => {
             process.env.PUBLIC_URL + "/assets/CV.pdf",
             "CV.pdf"
         );
-    }
+    };
 
     return (
         <div>
@@ -29,35 +29,35 @@ const Footer = () => {
 export { Footer };
 
 const FooterContainer = styled.div`
-padding:0 2rem;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
-align-items:center;
-text-align:center;
-flex-wrap:wrap;
-background: ${(props) => {
-        return props.theme.navBar
+  padding:0 2rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  text-align:center;
+  flex-wrap:wrap;
+  background: ${(props) => {
+        return props.theme.navBar;
     }};
-`
+`;
 const Contact = styled.div`
-    margin-top:0.5rem;
-    margin-bottom:1rem;
-    font-weight: bold;
-    color:white;
-    text-align: center;
-    font-size:1rem;
-    text-shadow: 2px 2px 4px #000000;
-`
+  margin-top:0.5rem;
+  margin-bottom:1rem;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  font-size:1rem;
+  text-shadow: 2px 2px 4px #000000;
+`;
 
 const Icons = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-size: 30px;
-    width:15rem;
-    align-items: center;
-    color:white;
-    margin-bottom:0.5rem;
-    cursor: pointer;
-`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 30px;
+  width:15rem;
+  align-items: center;
+  color:white;
+  margin-bottom:0.5rem;
+  cursor: pointer;
+`;

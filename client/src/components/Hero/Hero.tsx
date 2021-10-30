@@ -38,118 +38,118 @@ const Hero = () => {
 export { Hero };
 
 const Img = styled.img`
-        height:100%;
-        width:auto;
-        @media (max-width:812px){
-            width:100%;
-            height:auto;
-        }
+  height:100%;
+  width:auto;
+  @media (max-width:812px){
+    width:100%;
+    height:auto;
+  }
 `;
 
 const HeroContainer = styled.div`
-width:100%;
-height:100%;
-@media (max-width:812px){
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-}
+  width:100%;
+  height:100%;
+  @media (max-width:812px){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
 `;
 
 const DetailsContainer = styled.div`
-position:absolute;
-display:flex;
-flex-direction:row;
-width:99%;
-justify-content:space-between;
-margin-top:6rem;
+  position:absolute;
+  display:flex;
+  flex-direction:row;
+  width:99%;
+  justify-content:space-between;
+  margin-top:6rem;
 
-@media (max-width:812px){
-flex-direction:column;
-align-items:center;
-justify-content:center;
-margin-top:initial;
-margin:auto;
-}
+  @media (max-width:812px){
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-top:initial;
+    margin:auto;
+   }
 `;
 
 const SubDetailsContainer = styled.div`
-display:flex;
-flex-direction:column;
-padding:0.1rem
+  display:flex;
+  flex-direction:column;
+  padding:0.1rem
 `;
 
 const Icons = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    font-size: 3rem;
-    align-items: center;
-    color:white;
-    cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 3rem;
+  align-items: center;
+  color:white;
+  cursor: pointer;
 
-    svg{
-        margin:1rem;
-    }
+  svg {
+   margin:1rem;
+  }
 `;
 
 const MenuLink = styled(Link)`
-display: block;
-color:white;
-background: ${props => props.theme.buttons};
-border:2px solid white;
-padding: 0.5rem 0.5rem;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-width:10rem;
-margin-bottom:2rem;
-margin-top:2rem;
-margin-left:auto;
-margin-right:auto;
-border-radius:100px;    
-transition-duration: 0.4s;
-&:hover {
-cursor: pointer;
-background: ${props => props.theme.buttonsHover};
-color: white;
+  display: block;
+  color:white;
+  background: ${props => props.theme.buttons};
+  border:2px solid white;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width:10rem;
+  margin-bottom:2rem;
+  margin-top:2rem;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius:100px;    
+  transition-duration: 0.4s;
+  &:hover {
+     cursor: pointer;
+     background: ${props => props.theme.buttonsHover};
+     color: white;
 }
 
-@media only screen and (max-width: 360px) {
+  @media only screen and (max-width: 360px) {
     margin-bottom:1.5rem;
-margin-top:1.5rem;
+    margin-top:1.5rem;
 }
 `;
 
 const OpeningParagraph = styled.span`
-    display: block;
-    font-weight: bold;
-    color:white;
-    text-align: center;
-    font-size:4rem;
-    text-shadow: 2px 2px 4px #000000;
-    @media only screen and (max-width: 562px) {
-        font-size: 3rem;
-}
-@media only screen and (max-width: 360px) {
-        font-size: 2rem;   
-}
+  display: block;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  font-size:4rem;
+  text-shadow: 2px 2px 4px #000000;
+  @media only screen and (max-width: 562px) {
+    font-size: 3rem;
+  }
+  @media only screen and (max-width: 360px) {
+    font-size: 2rem;   
+  }
 `;
 
 const OpeningParagraph2 = styled.span`
-    display: block;
-    font-weight: bold;
-    color:white;
-    text-align: center;
-    font-size:3rem;
-    text-shadow: 2px 2px 4px #000000;
-    @media only screen and (max-width: 562px) {
-        font-size: 2rem;
-}
+  display: block;
+  font-weight: bold;
+  color:white;
+  text-align: center;
+  font-size:3rem;
+  text-shadow: 2px 2px 4px #000000;
+  @media only screen and (max-width: 562px) {
+    font-size: 2rem;
+  }
 
-    @media only screen and (max-width: 360px) {
-        font-size: 1.5rem;
-}
+  @media only screen and (max-width: 360px) {
+    font-size: 1.5rem;
+  }
 `;
 

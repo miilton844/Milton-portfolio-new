@@ -1,8 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { faInternetExplorer } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {CardDetails} from '../../interfaces/interfaces'
+import { CardDetails } from '../../interfaces/interfaces';
 
 
 
@@ -28,8 +28,8 @@ const Card: React.FC<CardDetails> = (props) => {
         </Actions>
       </Container>
     </div>
-    );
-}
+  );
+};
 
 export { Card };
 
@@ -48,6 +48,7 @@ const Description = styled.p`
   color: #fff;
   font-weight: 300;
 `;
+
 const ActionButton = styled.button`
   margin: 5px 5px 5px 5px;
   padding: 8px 20px;
@@ -77,17 +78,17 @@ const Actions = styled.div`
 `;
 
 const Container = styled.div`
-margin:10px;
-border-radius:10px;
-background:rgb(0, 61, 77);
-padding:10px;
-align-items: center;
-text-align:center;
-flex: 0 0 33.333333%;
-   background: rgb(0, 61, 77);
-   margin: 10px;
-   width:18rem;
-   @media (max-width:812px){
-width:initial;
-    }  
+  margin:10px;
+  border-radius:10px;
+  background:rgb(0, 61, 77);
+  padding:10px;
+  align-items: center;
+  text-align:center;
+  flex: 0 0 33.333333%;
+  background: rgb(0, 61, 77);
+  margin: 10px;
+  width:18rem;
+  @media (max-width:812px){
+    width:initial;
+  }  
 `;

@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 
 const mergredReduers = combineReducers({
     darkMode: darkMode,
-})
-export { mergredReduers }
+});
+
+export { mergredReduers };
 export type RootState = ReturnType<typeof mergredReduers>;

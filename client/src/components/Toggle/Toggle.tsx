@@ -30,56 +30,50 @@ const Toggle = ({ onChange }: any) => {
 export { Toggle }
 
 const InputWrapper = styled.label`
-position:relative;
-margin:10px;
-
-`
+  position:relative;
+  margin:10px;
+`;
 //avoiding jump of toggle
 const Input = styled.input`
 /* position:absolute; */
-display:none;
-left:-9999px;
-top:-9999px;
-&:checked + span{
+  display:none;
+  left:-9999px;
+  top:-9999px;
+  &:checked + span{
     background-color:#1890ff;
-
-
-&:before{
+  &:before{
     left:27px;
+  }
 }
-}
-`
+`;
 
 const Slider = styled.span`
-display:flex;
-cursor:pointer;
-width:50px;
-height:25px;
-border-radius:100px;
-background-color:#bfbfbf;
-position:relative;
-transition:background-color 0.2s ;
+  display:flex;
+  cursor:pointer;
+  width:50px;
+  height:25px;
+  border-radius:100px;
+  background-color:#bfbfbf;
+  position:relative;
+  transition:background-color 0.2s ;
 
-@media (max-width:1400px){
+   @media (max-width:1400px){
      cursor:initial
-}
-
-&:before{
-    content:"";
-    position:absolute;
-    top:2px;
-    left:2px;
-    width:21px;
-    height:21px;
-    border-radius:45px;
-    transition:0.2s;
-    background:#fff;
-    box-shadow:0 2px 4px;
-}
-
-
- &:active:before{
-     width:28px;
- }
-
-`
+   }
+   
+   &:before{
+     content:"";
+     position:absolute;
+     top:2px;
+     left:2px;
+     width:21px;
+     height:21px;
+     border-radius:45px;
+     transition:0.2s;
+     background:#fff;
+     box-shadow:0 2px 4px;
+   }
+    &:active:before{
+      width:28px;
+    }
+`;

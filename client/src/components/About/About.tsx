@@ -15,45 +15,45 @@ const About = () => {
       </AboutContainer>
     </div>
   );
-}
+};
 
 export { About };
 
 const AboutContainer = styled.div`
-  h1{
-margin:0px;
-padding-top:10px;
-color:white;
+  h1 {
+    margin:0px;
+    padding-top:10px;
+    color:white;
  }
-background: ${props => props.theme.aboutBodyInfo};
-text-align:center;
-font-size:1rem;
-text-shadow: 2px 2px 4px #000000;
+  background: ${props => props.theme.aboutBodyInfo};
+  text-align:center;
+  font-size:1rem;
+  text-shadow: 2px 2px 4px #000000;
 `;
 
 const AboutMain = styled.div`
-display:flex;
-flex-direction:row;
-margin-left:20px;
-padding:10px;
-align-items:center;
-font-size:20px;
-text-shadow:none;
-color:${props => props.theme.textColor};;
-img{
-    height:11rem;
-    width:11rem;
-    border-radius:500px;
-    margin-top:20px;
-    margin-bottom:20px;
-    margin-right:20px;
-    margin-left:20px;
-}
-div{
-    line-height: 2;
-}
+  display:flex;
+  flex-direction:row;
+  margin-left:20px;
+  padding:10px;
+  align-items:center;
+  font-size:20px;
+  text-shadow:none;
+  color:${props => props.theme.textColor};
+  img {
+     height:11rem;
+     width:11rem;
+     border-radius:500px;
+     margin-top:20px;
+     margin-bottom:20px;
+     margin-right:20px;
+     margin-left:20px;
+  }
+  div{
+     line-height: 2;
+  }
 
-@media (max-width:812px){
-flex-direction:column;
-}  
+    @media (max-width:812px){
+       flex-direction:column;
+    }  
 `;

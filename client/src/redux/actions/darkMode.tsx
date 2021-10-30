@@ -1,4 +1,4 @@
-const darkMode = (info:any) => {
+const darkMode = (info: any) => {
     return {
         type: 'darkMode',
         payload: info

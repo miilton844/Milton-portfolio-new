@@ -1,16 +1,15 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { faInternetExplorer } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Card } from "../Card/Card";
-import { projectsService } from "../../services/projects"
-import { useEffect, useState } from "react"
+import { projectsService } from "../../services/projects";
+import { useEffect, useState } from "react";
 import usePagination from "../Pagination/Pagination";
 import { Pagination } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core/styles";
-import { CardDetails } from '../../interfaces/interfaces'
-
-import "./Projects.css"
+import { CardDetails } from '../../interfaces/interfaces';
+import "./Projects.css";
 
 const Projects: React.FC<CardDetails> = () => {
 
@@ -128,29 +127,29 @@ const Projects: React.FC<CardDetails> = () => {
 export { Projects };
 
 const PaginationContainer = styled.div`
-background: ${props => props.theme.aboutBodyInfo};
-margin-top:-1px;
-align-items: center;
-    justify-content: center;
-    color:white
+  background: ${props => props.theme.aboutBodyInfo};
+  margin-top:-1px;
+  align-items: center;
+  justify-content: center;
+  color:white
 `
 const ProjectsContainer = styled.div`
-background: ${props => props.theme.aboutBodyInfo};
-padding-left:1rem;
-padding-right:1rem;
-padding-top:1rem;
-padding-bottom:1rem;
-flex-direction:row; 
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-flex: 0 0 200px; /* play with this number */
-align-items:center;
-margin-top:-1px;
+  background: ${props => props.theme.aboutBodyInfo};
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-top:1rem;
+  padding-bottom:1rem;
+  flex-direction:row; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 0 0 200px; /* play with this number */
+  align-items:center;
+  margin-top:-1px;
 
-@media (max-width:812px){
-flex-direction:column;
-}  
+  @media (max-width:812px){
+    flex-direction:column;
+  }  
 `
 
 
