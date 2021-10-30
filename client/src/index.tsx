@@ -8,7 +8,6 @@ import { mergredReduers } from './redux/reducers';
 
 const store = createStore(mergredReduers)
 
-
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
