@@ -9,6 +9,7 @@ import usePagination from "../Pagination/Pagination";
 import { Pagination } from "@material-ui/lab";
 import { makeStyles } from "@material-ui/core/styles";
 import { CardDetails } from '../../interfaces/interfaces';
+import moment from 'moment'
 import "./Projects.css";
 
 const Projects: React.FC<CardDetails> = () => {
@@ -43,6 +44,12 @@ const Projects: React.FC<CardDetails> = () => {
       for (let i = 0; i < projectsFromAPI.length; i++) {
         projectsFromAPI[i].github = dataFromGit[i].html_url;
       }
+      projectsFromAPI.sort((item1: any, item2: any) => {
+        let date1: any = moment(item1.date, "DD/MM/YYYY");
+        let date2: any = moment(item2.date, "DD/MM/YYYY");
+        return -(date1 - date2);
+      })
+
       setProjectsInfo(projectsFromAPI)
 
     })();
